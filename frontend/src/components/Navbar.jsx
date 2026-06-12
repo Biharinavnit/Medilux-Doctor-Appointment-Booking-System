@@ -52,15 +52,24 @@ const Navbar = () => {
 
               <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block'>
                 <div className='min-w-48 bg-gray-50 rounded flex flex-col gap-4 p-4'>
-                  <p onClick={() => navigate('/my-profile')} className='hover:text-black cursor-pointer'>
+                  <p
+                    onClick={() => navigate('/my-profile')}
+                    className='hover:text-black cursor-pointer'
+                  >
                     My Profile
                   </p>
 
-                  <p onClick={() => navigate('/my-appointments')} className='hover:text-black cursor-pointer'>
+                  <p
+                    onClick={() => navigate('/my-appointments')}
+                    className='hover:text-black cursor-pointer'
+                  >
                     My Appointments
                   </p>
 
-                  <p onClick={logout} className='hover:text-black cursor-pointer'>
+                  <p
+                    onClick={logout}
+                    className='hover:text-black cursor-pointer'
+                  >
                     Logout
                   </p>
                 </div>
@@ -68,12 +77,15 @@ const Navbar = () => {
             </div>
           ) : (
             <div className='flex items-center gap-3'>
-              <button
-                onClick={() => window.open('https://medilux-doctor-appointment-booking-tau.vercel.app/', '_blank')}
+
+              <a
+                href="https://medilux-doctor-appointment-booking-tau.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className='border border-gray-300 px-5 py-2 rounded-full hidden md:block hover:bg-gray-100'
               >
                 Admin Panel
-              </button>
+              </a>
 
               <button
                 onClick={() => navigate('/login')}
@@ -81,6 +93,7 @@ const Navbar = () => {
               >
                 Create account
               </button>
+
             </div>
           )
         }
@@ -96,7 +109,12 @@ const Navbar = () => {
         <div className={`md:hidden ${showMenu ? 'fixed w-full' : 'h-0 w-0'} right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}>
           <div className='flex items-center justify-between px-5 py-6'>
             <img src={assets.logo} className='w-36' alt="" />
-            <img onClick={() => setShowMenu(false)} src={assets.cross_icon} className='w-7' alt="" />
+            <img
+              onClick={() => setShowMenu(false)}
+              src={assets.cross_icon}
+              className='w-7'
+              alt=""
+            />
           </div>
 
           <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
@@ -117,9 +135,11 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
+
       </div>
     </div>
   )
 }
 
 export default Navbar
+
